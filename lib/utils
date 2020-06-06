@@ -46,6 +46,15 @@ function install_dotnet() {
   cp -r ${DOTNET_CACHE_LOCATION}/runtime ${BUILD_DIR}/.heroku/dotnet
 }
 
+function install_apt_update() {
+  RUN apt-get update \
+      && apt-get install -y --allow-unauthenticated \
+          libc6-dev \
+          libgdiplus \
+          libx11-dev \
+       && rm -rf /var/lib/apt/lists/*
+}
+
 export_env_dir() {
   local env_dir=$1
   if [ -d "$env_dir" ]; then
