@@ -47,12 +47,13 @@ function install_dotnet() {
 }
 
 function install_apt_update() {
+   mkdir /var/lib/apt/lists/partial
    apt-get update \
       && apt-get install -y --allow-unauthenticated \
           libc6-dev \
           libgdiplus \
           libx11-dev \
-      # && rm -rf /var/lib/apt/lists/*
+      && rm -rf /var/lib/apt/lists/*
 }
 
 export_env_dir() {
