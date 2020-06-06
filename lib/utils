@@ -47,8 +47,10 @@ function install_dotnet() {
 }
 
 function install_apt_update() {
-   apt-get update && apt-get install -y sudo
-   sudo apt-get update && sudo apt-get install -y --allow-unauthenticated libc6-dev libgdiplus libx11-dev
+  USER root
+  apt-get update && apt-get install -y sudo
+    # RUN commands
+  USER 1001
 }
 
 export_env_dir() {
