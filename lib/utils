@@ -47,7 +47,7 @@ function install_dotnet() {
 }
 
 function install_apt_update() {
-  sudo apt-get update \
+   apt-get update \
       && apt-get install -y --allow-unauthenticated \
           libc6-dev \
           libgdiplus \
