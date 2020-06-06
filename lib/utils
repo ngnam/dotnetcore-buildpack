@@ -46,13 +46,6 @@ function install_dotnet() {
   cp -r ${DOTNET_CACHE_LOCATION}/runtime ${BUILD_DIR}/.heroku/dotnet
 }
 
-function install_apt_update() {
-  USER root
-  apt-get update && apt-get install -y sudo
-    # RUN commands
-  USER 1001
-}
-
 export_env_dir() {
   local env_dir=$1
   if [ -d "$env_dir" ]; then
