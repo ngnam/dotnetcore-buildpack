@@ -52,7 +52,7 @@ function install_apt_update() {
           libc6-dev \
           libgdiplus \
           libx11-dev \
-       && rm -rf /var/lib/apt/lists/*
+      # && rm -rf /var/lib/apt/lists/*
 }
 
 export_env_dir() {
